@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   first_user = User.create(name: 'Dino', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Peru.')
-  subject { Post.new(author: first_user, title: 'Hello', text: 'This is my first post' ) }
+  subject { Post.new(author: first_user, title: 'Hello', text: 'This is my first post') }
   before { subject.save }
 
   it 'Should has valid value' do
@@ -17,7 +17,7 @@ RSpec.describe Post, type: :model do
   it 'title should not has a length greater than 250' do
     new_title = subject.title * 250
     subject.title = new_title
-    expect(subject).to_not be_valid 
+    expect(subject).to_not be_valid
   end
 
   it 'title should has a length less than 250' do
@@ -50,7 +50,7 @@ RSpec.describe Post, type: :model do
 
   it 'Five recent comments length should be equal to 3' do
     5.times do
-      Comment.create(post: subject, author: first_user, text: 'Hi Tom!' )
+      Comment.create(post: subject, author: first_user, text: 'Hi Tom!')
     end
     expect(subject.last_comments.length).to eq(5)
   end
@@ -58,5 +58,4 @@ RSpec.describe Post, type: :model do
   it 'Update Post Counter' do
     expect(subject.author.posts_counter).to be > 1
   end
-  
 end
