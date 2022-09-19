@@ -1,2 +1,11 @@
 <h1>Users#index</h1>
 <p>Here is a list of users</p>
+<% @users.each do |user|%>
+<article>
+<img src=<%= user.photo %>>
+<div>
+    <p><%= user.name %></p>
+    <p>Number of posts: <% user.posts_counter %></p>
+</div>
+</article>
+<%end%>

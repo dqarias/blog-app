@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def index
-    puts params
-    puts "hello"
+    @users = User.all
   end
 
   def show
