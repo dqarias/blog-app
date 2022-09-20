@@ -22,8 +22,8 @@ RSpec.describe 'Users', type: :request do
 
   describe 'GET /:id' do
     it 'returns http success' do
-      newUser = User.create(name: 'Dino', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Peru.')
-      get "/users/#{newUser.id}"
+      new_user = User.create(name: 'Dino', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Peru.')
+      get "/users/#{new_user.id}"
       expect(response).to have_http_status(:success)
     end
 
