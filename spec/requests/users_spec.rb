@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
   describe 'GET /' do
-    
     it 'returns http success' do
       get '/users'
       expect(response).to have_http_status(:success)
@@ -17,7 +16,6 @@ RSpec.describe 'Users', type: :request do
       get '/users'
       expect(response.body).to include('Here is a list of users')
     end
-
   end
 
   describe 'GET /:id' do
@@ -28,7 +26,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'renders show template' do
-      get "/users/1"
+      get '/users/1'
       expect(response).to render_template(:show)
     end
 
@@ -36,6 +34,5 @@ RSpec.describe 'Users', type: :request do
       get '/users/1'
       expect(response.body).to include('Here is an specific user')
     end
-
   end
 end

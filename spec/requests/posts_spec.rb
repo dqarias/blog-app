@@ -1,12 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe 'Users/:id/Posts', type: :request do
-
   describe 'GET /index' do
-
     before(:example) do
-      newUser = User.create(name: 'Dino', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Peru.')
-      get "/users/#{newUser.id}/posts"
+      new_user = User.create(name: 'Dino', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Peru.')
+      get "/users/#{new_user.id}/posts"
     end
 
     it 'returns http success' do
@@ -20,7 +18,6 @@ RSpec.describe 'Users/:id/Posts', type: :request do
     it 'includes the correct text on its body' do
       expect(response.body).to include('Here is a list of post for a given user')
     end
-
   end
 
   describe 'GET /show' do
@@ -41,6 +38,5 @@ RSpec.describe 'Users/:id/Posts', type: :request do
     it 'includes the correct text on its body' do
       expect(response.body).to include('Here is an specific post for a given user')
     end
-
   end
 end
