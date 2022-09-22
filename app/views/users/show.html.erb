@@ -1,2 +1,27 @@
 <h1>Users#show</h1>
 <p>Here is an specific user</p>
+<section>
+    <article>
+        <div>
+            <img src=<%= image_path(@user_by_id.photo) %>>
+            <div>
+                <h2><%= @user_by_id.name %></h2>
+                <p><%= @user_by_id.posts_counter %></p>
+            <div>
+        </div>
+        <p><%= @user_by_id.bio %></p>
+    </article>
+    <article>
+        <% @post_by_user.each do |post| %>
+            <div>
+                <p>Post #</p>
+                <p><%= post.title %></p>
+                <p><%= post.text %></p>
+                <p>
+                    <span>Comments: <%= post.comments_counter %></span> ,
+                    <span>Likes: <%= post.likes_counter %></span>
+                </p>
+            </div>
+        <% end %>
+    </article>
+</section>
