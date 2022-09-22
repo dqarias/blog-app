@@ -1,2 +1,39 @@
 <h1>Posts#index</h1>
 <p>Here is a list of post for a given user</p>
+<section>
+    <article>
+        <div>
+            <img src=<%= image_path(@user_by_id.photo) %>>
+            <div>
+                <h2><%= @user_by_id.name %></h2>
+                <p><%= @user_by_id.posts_counter %></p>
+            <div>
+        </div>
+        <p><%= @user_by_id.bio %></p>
+    </article> 
+    <article>
+        <% @post_by_user.each do |post| %>
+            <div>
+                <p>Post #</p>
+                <p><%= post.title %></p>
+                <p><%= post.text %></p>
+                <p>
+                    <span>Comments: <%= post.comments_counter %></span> ,
+                    <span>Likes: <%= post.likes_counter %></span>
+                </p>
+            </div>
+            <div>
+                <% @comment_by_post.each do |comment| %>
+                    <% if post.id === 1 %>
+                        <div>
+                            <p><%= comment.author.name %></p>
+                            <p><%= comment.text %></p>
+                        </div>
+                     <% end %>
+                <% end %>
+            </div>
+        <% end %>
+                
+
+    </article>
+</section>
