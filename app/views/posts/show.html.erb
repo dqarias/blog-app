@@ -1,2 +1,28 @@
 <h1>Posts#show</h1>
 <p>Here is an specific post for a given user</p>
+<div>
+    
+    <% @post_by_user.each do |post| %>
+    <div>
+        <h2>Post # by <%= post.author.name %></h2>
+        <p>
+        <span> Comments<%= post.comments_counter %></span> ,
+        <span> Likes<%= post.likes_counter %></span>
+        </p>
+    <div>
+    <div>
+        <p><%= post.title %></p>
+        <p><%= post.text %></p>
+    </div>
+    <div>
+        <% @comment_by_post.each do |comment| %>
+            <% if post.id === 1 %>
+                <div>
+                    <p><%= comment.author.name %></p>
+                    <p><%= comment.text %></p>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+    <% end %>
+</div>
