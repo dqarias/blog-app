@@ -1,58 +1,58 @@
 @import "config/mixins";
-.post{
-    &__card{
-        @include box;
+
+.post {
+  &__card {
+    @include box;
+  }
+
+  &__head {
+    color: #ec5342d3;
+    font-weight: 700;
+  }
+
+  &__body {
+    &-title {
+      font-weight: 700;
+      font-size: 1.4rem;
     }
 
-    &__head{
-        color: #ec5342d3;
-        font-weight: 700;
+    &-text {
+      font-size: 1.2rem;
     }
+  }
 
-    &__body{
-       
-        &-title{
-            font-weight: 700;
-            font-size: 1.4rem;
-        }
-
-        &-text{
-             font-size: 1.2rem;
-        }
-    }
-
-    &__footer{
-        font-size: 1rem;
-        text-align: right;
-        color: #827c7c;
-    }
+  &__footer {
+    font-size: 1rem;
+    text-align: right;
+    color: #827c7c;
+  }
 }
 
-.post-user{
-    margin: 1.6rem;
-    padding: 1.6rem;
-    background-color: rgba(255, 237, 214, 0.776);
-    &__head{
-        color: #ec5342d3;
-        font-size: 1.4rem;
-        font-weight: 700;
+.post-user {
+  margin: 1.6rem;
+  padding: 1.6rem;
+  background-color: rgba(255, 237, 214, 0.776);
+
+  &__head {
+    color: #ec5342d3;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  &__body {
+    &-title {
+      font-weight: 700;
+      font-size: 1rem;
     }
 
-    &__body{
-       
-        &-title{
-            font-weight: 700;
-            font-size: 1rem;
-        }
-
-        &-text{
-             font-size: 1.2rem;
-        }
+    &-text {
+      font-size: 1.2rem;
     }
+  }
 
-    &__footer{
-        font-size: 1rem;
-        text-align: right;
-        color: #827c7c;
-    }
+  &__footer {
+    font-size: 1rem;
+    text-align: right;
+    color: #827c7c;
+  }
 }
