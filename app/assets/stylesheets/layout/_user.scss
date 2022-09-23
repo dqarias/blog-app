@@ -1,0 +1,62 @@
+@import "config/mixins";
+.user{
+    &__card{
+        @include box;
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+    }
+
+    &__information{
+        width: 100%;
+    }
+
+    &__img{
+        width: 25%;
+        border-radius: 50%;
+    }
+
+    &__name{
+        color: #ec5342d3;
+        font-size: 1.6rem;
+    }
+
+    &__post-counter{
+        font-size: 1rem;
+        text-align: right;
+        color: #827c7c;
+    }
+
+    &__bio{
+        font-size: 1.2rem;
+    }
+}
+
+.post{
+    &__card{
+        @include box;
+    }
+
+    &__head{
+        color: #ec5342d3;
+        font-weight: 700;
+    }
+
+    &__body{
+       
+        &-title{
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
+        &-text{
+             font-size: 1.2rem;
+        }
+    }
+
+    &__footer{
+        font-size: 1rem;
+        text-align: right;
+        color: #827c7c;
+    }
+}

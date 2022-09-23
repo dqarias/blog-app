@@ -3,11 +3,11 @@
 .user-title{
     margin-top:1.6rem;
     margin-left: 1.6rem;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #ec5342d3;
 }
-.user{
+.users{
     &__container{
         @include box;
         display : flex;
