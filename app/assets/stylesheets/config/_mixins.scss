@@ -8,3 +8,13 @@
     background-color: #fbfbfb;
     box-shadow:0 5px 10px rgba(154,160,185,0.05), 0 15px 40px rgba(166,173,201,0.2);
 }
+
+@mixin box2{
+    line-height: 2.4rem;
+    font-size: 1.4rem;
+    border: 2px solid var(color-ligth-gray);
+    border-radius: 1rem;
+    padding: 1.4rem;
+    background-color: #fbfbfb;
+    box-shadow:0 5px 10px rgba(154,160,185,0.05), 0 15px 40px rgba(166,173,201,0.2);
+}

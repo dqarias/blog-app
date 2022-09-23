@@ -19,3 +19,24 @@
          font-size: 1rem;
     }
 }
+
+.comments-user{
+    &__topic{
+        font-size: 1.2rem;
+        color: #ec5342d3;
+    }
+
+    &__info{
+        display: flex;
+        margin-top: 1rem;
+        
+    }
+    &__title{
+        font-weight: 700;
+        font-size: 1rem;
+    }
+
+    &__text{
+         font-size: 1rem;
+    }
+}

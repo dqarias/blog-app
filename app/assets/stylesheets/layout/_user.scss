@@ -32,31 +32,3 @@
     }
 }
 
-.post{
-    &__card{
-        @include box;
-    }
-
-    &__head{
-        color: #ec5342d3;
-        font-weight: 700;
-    }
-
-    &__body{
-       
-        &-title{
-            font-weight: 700;
-            font-size: 1.4rem;
-        }
-
-        &-text{
-             font-size: 1.2rem;
-        }
-    }
-
-    &__footer{
-        font-size: 1rem;
-        text-align: right;
-        color: #827c7c;
-    }
-}

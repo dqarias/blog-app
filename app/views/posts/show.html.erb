@@ -1,25 +1,26 @@
-<h1>Posts#show</h1>
-<p>Here is an specific post for a given user</p>
+<p class="user-title">Specific Post by user: </p>
 <div>
     
-    <% @post_by_user.each do |post| %>
-    <div>
-        <h2>Post # by <%= post.author.name %></h2>
-        <p>
-        <span> Comments<%= post.comments_counter %></span> ,
-        <span> Likes<%= post.likes_counter %></span>
-        </p>
-    <div>
-    <div>
-        <p><%= post.title %></p>
-        <p><%= post.text %></p>
-    </div>
-    <div>
+    <% @post_by_user.each_with_index do |post, index| %>
+        <div class="post-user">
+            <h2 class="post-user__head">Post # <%= index + 1%> by <%= post.author.name %></h2>
+            <div class="post-user__body">
+                <p class="post-user__body-title"><%= post.title %></p>
+                <p class="post-user__body-text"><%= post.text %></p>
+            </div>
+            <p class="post-user__footer">
+                <span> Comments<%= post.comments_counter %></span> ,
+                <span> Likes<%= post.likes_counter %></span>
+            </p>
+        <div>
+    
+    <div class="comments-user">
+        <h2 class="comments-user__topic">Comments:</h2>
         <% @comment_by_post.each do |comment| %>
             <% if post.id === 1 %>
-                <div>
-                    <p><%= comment.author.name %></p>
-                    <p><%= comment.text %></p>
+                <div class="comments-user__info">
+                    <p class="comments-user__title"><%= comment.author.name %></p>
+                    <p class="comments-user__text"><%= comment.text %></p>
                 </div>
             <% end %>
         <% end %>
