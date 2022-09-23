@@ -1,0 +1,20 @@
+:root {
+  //Setting 1rem to 10px
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--font-titles);
+  font-style: normal;
+  color: var(--color-primary-black);
+  background-color: rgb(239, 230, 230);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}

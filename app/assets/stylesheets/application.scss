@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+// Mixins
+
+// Configuration
+@import "config/variables";
+@import "config/mixins";
+@import "config/base";
+@import "config/reset";
+@import "layout/users";
+@import "layout/user";
+@import "layout/comments";
+@import "layout/post";

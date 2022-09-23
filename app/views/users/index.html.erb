@@ -1,11 +1,10 @@
-<h1>Users#index</h1>
-<p>Here is a list of users</p>
+<p class="user-title">List of Users:</p>
 <% @users.each do |user|%>
-<article>
-<img src=<%= user.photo %>>
-<div>
-    <p><%= user.name %></p>
-    <p>Number of posts: <% user.posts_counter %></p>
+<article class="users__container">
+<img class="users__image" src=<%= image_path(user.photo) %>>
+<div class="users__info">
+    <p class="users__name"><%= user.name %></p>
+    <p class="users__post-number">Number of posts: <%= user.posts_counter %></p>
 </div>
 </article>
 <%end%>
