@@ -8,30 +8,30 @@
         <div>
         <p class="user__bio"><%= @user_by_id.bio %></p>
     </article>
-    <article class="post">
-        <% @posts_by_user.each_with_index do |post, index| %>
-            <div class="post__card">
-                <p class="post__head">Post # <%= index +1 %></p>
-                <div class="post__body">
+    <% @post_by_user.each_with_index do |post, index| %>
+        <div class="post__card">
+            <h2 class="post__head">Post # <%= index + 1%> by <%= post.author.name %></h2>
+            <div class="post__body">
                 <p class="post__body-title"><%= post.title %></p>
                 <p class="post__body-text"><%= post.text %></p>
-                </div>
-                <p class="post__footer">
-                    <span>Comments: <%= post.comments_counter %></span> ,
-                    <span>Likes: <%= post.likes_counter %></span>
-                </p>
             </div>
-            <div class="comments">
-                <h2 class="comments__topic">Comments:</h2>
-                <% @comment_by_post.each do |comment| %>
-                    <% if post.id === comment.post_id %>
-                        <div class="comments__info">
-                            <p class="comments__title"><%= comment.author.name %>: </p>
-                            <p class="comments__text"><%= comment.text %></p>
-                        </div>
-                     <% end %>
-                <% end %>
-            </div>
-        <% end %>
-    </article>
+            <p class="post__footer">
+                <span> Comments<%= post.comments_counter %></span> ,
+                <span> Likes<%= post.likes_counter %></span>
+            </p>
+        </div>
+        
+          <div class="comments">
+            <h2 class="comments__topic">Comments:</h2>
+            <% @comments_by_user.each do |comment| %>
+            <% if post.id === comment.post_id %>
+                    <div class="comments__info">
+                        <p class="comments__title"><%= comment.author.name %>: </p>
+                        <p class="comments__text"><%= comment.text %></p>
+                    </div>  
+            <% end %> 
+            <% end %> 
+          </div>
+
+    <% end %>
 </section>

@@ -1,6 +1,5 @@
 <p class="user-title">Specific Post by user: </p>
 <div>
-    
     <% @post_by_user.each_with_index do |post, index| %>
         <div class="post-user">
             <h2 class="post-user__head">Post # <%= index + 1%> by <%= post.author.name %></h2>
@@ -17,7 +16,7 @@
     <div class="comments-user">
         <h2 class="comments-user__topic">Comments:</h2>
         <% @comment_by_post.each do |comment| %>
-            <% if post.id === 1 %>
+            <% if post.id === comment.post_id %>
                 <div class="comments-user__info">
                     <p class="comments-user__title"><%= comment.author.name %></p>
                     <p class="comments-user__text"><%= comment.text %></p>

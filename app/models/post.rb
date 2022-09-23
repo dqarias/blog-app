@@ -10,12 +10,12 @@ class Post < ApplicationRecord
 
   after_save :update_post_counter
 
-  def update_post_counter
-    author.increment!(:posts_counter)
+  def last_comments
+    comments.where(post_id: self).order(created_at: :desc).limit(5)
   end
 
-  def last_comments
-    comments.where(post: self).order(created_at: :desc).limit(5)
+  def update_post_counter
+    author.increment!(:posts_counter)
   end
 
   private :update_post_counter
