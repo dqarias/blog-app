@@ -12,4 +12,11 @@ class PostsController < ApplicationController
     @post_by_user = Post.where(author_id: params[:user_id], id: params[:id])
     @comment_by_post = Comment.where(post: @post_by_user)
   end
+
+  def new
+  end
+
+  def create
+  end
+  
 end
