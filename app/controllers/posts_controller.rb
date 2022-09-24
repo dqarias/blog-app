@@ -14,14 +14,13 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post_new = Post.new 
+    @post_new = Post.new
   end
 
   def create
-  
     @user = current_user
     @post_new = @user.posts.new(post_params)
-  
+
     if @post_new.save
       redirect_to user_posts_path(@user.id)
     else
@@ -34,5 +33,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :text)
   end
-  
 end
