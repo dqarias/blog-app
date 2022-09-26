@@ -1,0 +1,11 @@
+<%= form_with model: @comment, url: user_post_comments_path, class:"create-comment", method: :post do |form| %>
+  <h2>Add a new comment</h2>
+  <div>
+    <%= form.label :text %>
+    <%= form.text_area :text %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+

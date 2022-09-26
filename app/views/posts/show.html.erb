@@ -12,6 +12,10 @@
                 <span> Likes<%= post.likes_counter %></span>
             </p>
         <div>
+
+    <%= form_with url: user_post_likes_url(post.author_id, post.id), method: 'post' do |form| %>
+    <% form.submit 'Like' %>
+  <% end %>
     
     <div class="comments-user">
         <h2 class="comments-user__topic">Comments:</h2>

@@ -12,4 +12,25 @@ class PostsController < ApplicationController
     @post_by_user = Post.where(author_id: params[:user_id], id: params[:id])
     @comment_by_post = Comment.where(post: @post_by_user)
   end
+
+  def new
+    @post_new = Post.new
+  end
+
+  def create
+    @user = current_user
+    @post_new = @user.posts.new(post_params)
+
+    if @post_new.save
+      redirect_to user_posts_path(@user.id)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :text)
+  end
 end
