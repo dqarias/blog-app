@@ -9,6 +9,7 @@
         <p class="user__bio"><%= @user_by_id.bio %></p>
     </article>
     <% @post_by_user.each_with_index do |post, index| %>
+    <%= link_to user_post_path(@user_by_id.id, post.id) do %>
         <div class="post__card">
             <h2 class="post__head">Post # <%= index + 1%> by <%= post.author.name %></h2>
             <div class="post__body">
@@ -20,7 +21,7 @@
                 <span> Likes<%= post.likes_counter %></span>
             </p>
         </div>
-        
+    <%end%>  
           <div class="comments">
             <h2 class="comments__topic">Comments:</h2>
             <% @comments_by_user.each do |comment| %>
@@ -34,4 +35,5 @@
           </div>
 
     <% end %>
+    <button type="button">Pagination</button>
 </section>
