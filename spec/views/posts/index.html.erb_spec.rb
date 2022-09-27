@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.describe 'User Show Page', type: :feature do
   before :each do
     @user = User.create(name: 'Tom', photo: 'https://i.pravatar.cc/150?img=8',
-      bio: "Teacher from Mexico", posts_counter: 0)
+                        bio: 'Teacher from Mexico', posts_counter: 0)
     @first_post = Post.create(author: @user, title: 'Hello', text: 'This is my first post')
     @second_post = Post.create(author: @user, title: 'Hi', text: 'This is my second post')
-    @first_comment = Comment.create(post: @first_post, author: @user, text: 'Hi Tom!' )
-    @second_comment = Comment.create(post: @first_post, author: @user, text: 'Hi Tom!' )
-    @third_comment = Comment.create(post: @first_post, author: @user, text: 'Hi Tom!' )
-    @fourth_comment = Comment.create(post: @first_post, author: @user, text: 'Hi Tom!' )
+    @first_comment = Comment.create(post: @first_post, author: @user, text: 'Hi Tom!')
+    @second_comment = Comment.create(post: @first_post, author: @user, text: 'Hi Tom!')
+    @third_comment = Comment.create(post: @first_post, author: @user, text: 'Hi Tom!')
+    @fourth_comment = Comment.create(post: @first_post, author: @user, text: 'Hi Tom!')
     @first_like = Like.create(post: @first_post, author: @user)
 
     visit "/users/#{@user.id}/posts"
@@ -22,7 +22,7 @@ RSpec.describe 'User Show Page', type: :feature do
   it 'display the username name' do
     expect(page).to have_content(@user.name)
   end
- 
+
   it 'display the number of post the user has written' do
     expect(page).to have_content("Number of post: #{@user.posts_counter}")
   end
@@ -57,5 +57,4 @@ RSpec.describe 'User Show Page', type: :feature do
     click_link(@first_post.title)
     expect(page).to have_content('Specific Post by user:')
   end
-
 end

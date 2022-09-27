@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.describe 'User Index Page', type: :feature do
   before :each do
     first_user = User.create(name: 'Tom', photo: 'https://i.pravatar.cc/150?img=8',
-      bio: "Teacher from Mexico", posts_counter: 0)
+                             bio: 'Teacher from Mexico', posts_counter: 0)
     second_user = User.create(name: 'Lilly', photo: 'https://i.pravatar.cc/150?img=5',
-      bio: "Teacher from Poland", posts_counter: 0)
+                              bio: 'Teacher from Poland', posts_counter: 0)
     third_user = User.create(name: 'Hans', photo: 'https://i.pravatar.cc/150?img=13',
-      bio: "Teacher from Brazil", posts_counter: 0)
+                             bio: 'Teacher from Brazil', posts_counter: 0)
     @users = [first_user, second_user, third_user]
-    visit users_path 
+    visit users_path
   end
   it 'display the username of all users' do
     @users.each do |user|
@@ -34,5 +34,4 @@ RSpec.describe 'User Index Page', type: :feature do
     click_link(user.name.to_s)
     expect(page).to have_content('User:')
   end
-
 end
