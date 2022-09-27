@@ -12,7 +12,7 @@ RSpec.describe 'User Show Page', type: :feature do
     @fourth_comment = Comment.create(post: @first_post, author: @user, text: 'Hi Tom!' )
     @first_like = Like.create(post: @first_post, author: @user)
 
-    visit "/users/#{@user.id}/posts"
+    visit "/users/#{@user.id}/posts/#{@first_post.id}"
   end
   it 'show post title, post author, comments_counter and likes_counter' do
     expect(page).to have_content(@first_post.title)
