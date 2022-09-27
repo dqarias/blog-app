@@ -1,5 +1,6 @@
 <p class="user-title">List of Users:</p>
 <% @users.each do |user|%>
+<%= link_to user_path(user.id) do %>
 <article class="users__container">
 <img class="users__image" src=<%= image_path(user.photo) %>>
 <div class="users__info">
@@ -7,4 +8,5 @@
     <p class="users__post-number">Number of posts: <%= user.posts_counter %></p>
 </div>
 </article>
+<%end%>
 <%end%>
