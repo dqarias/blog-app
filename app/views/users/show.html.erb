@@ -8,8 +8,10 @@
         <div>
         <p class="user__bio"><%= @user_by_id.bio %></p>
     </article>
+    
     <article class="post">
         <% @post_by_user.each_with_index do |post,index| %>
+        <%= link_to user_post_path(@user_by_id.id, post.id) do %>
             <div class="post__card">
                 <p class="post__head">Post # <%= index +1 %></p>
                 <div class="post__body">
@@ -21,6 +23,11 @@
                     <span>Likes: <%= post.likes_counter %></span>
                 </p>
             </div>
+        <%end%>
         <% end %>
     </article>
+    
+
+     <%= link_to 'See all posts', user_posts_path(@user_by_id.id) if @user_by_id.posts_counter > 3 %>
+   
 </section>

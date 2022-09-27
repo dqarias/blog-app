@@ -32,4 +32,18 @@ RSpec.describe 'User Show Page', type: :feature do
     expect(page).to_not have_content(@first_post.text)
   end
 
+  it 'display see all post link' do
+    expect(page).to have_content('See all post')
+  end
+
+  it 'changes to post show page after clicking on a user post' do
+    click_link(@user.posts.last.title.to_s)
+    expect(page).to have_content('Specific Post by user:')
+  end
+
+  it 'changes to post index page after clicking on see all posts' do
+    click_link('See all posts')
+    expect(page).to have_content('Post by user:')
+  end
+
 end
