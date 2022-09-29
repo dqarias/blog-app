@@ -8,6 +8,9 @@
         <div>
         <p class="user__bio"><%= @user_by_id.bio %></p>
     </article>
+    <div class= "button-block">
+        <button><%= link_to "New Post", new_user_post_path(@user_by_id.id) %></button>
+    </div>
     
     <article class="post">
         <% @post_by_user.each_with_index do |post,index| %>
