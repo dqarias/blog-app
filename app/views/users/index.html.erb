@@ -2,7 +2,8 @@
 <% @users.each do |user|%>
 <%= link_to user_path(user.id) do %>
 <article class="users__container">
-<img class="users__image" src=<%= image_path(user.photo) %>>
+<%# <img class="users__image" src=<%= image_path(user.photo) %>
+<img class="users__image" src = 'https://i.pravatar.cc/150?img=13'>
 <div class="users__info">
     <p class="users__name"><%= user.name %></p>
     <p class="users__post-number">Number of posts: <%= user.posts_counter %></p>
